@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelly Slicer Pro — ASMR 3D Physics</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./libs/three.module.js",
+            "three/addons/controls/OrbitControls.js": "./libs/OrbitControls.js",
+            "three/addons/": "./libs/",
+            "cannon-es": "./libs/cannon-es.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="webgl-canvas"></canvas>
+        <canvas id="slice-overlay"></canvas>
+
+        <div id="hud-top">
+            <div class="stats-row">
+                <div class="stat-card"><span class="stat-label">РАЗРЕЗОВ</span><span class="stat-value" id="stat-slices">0</span></div>
+                <div class="stat-card"><span class="stat-label">КУСОЧКОВ НА ДОСКЕ</span><span class="stat-value" id="stat-pieces">0</span></div>
+                <div class="stat-card"><span class="stat-label">КОМБО</span><span class="stat-value" id="stat-combo">x1</span></div>
+            </div>
+        </div>
+
+        <div id="hud-bottom">
+            <div class="controls-bar">
+                <button class="action-btn primary" id="btn-spawn"><span>[ПРОБЕЛ]</span> Рандом спавн</button>
+                <button class="action-btn" id="btn-slowmo"><span>[T]</span> Слоу-Мо</button>
+                <button class="action-btn danger" id="btn-clear"><span>[R]</span> Очистить</button>
+            </div>
+            <div class="help-bar">
+                <span><b>ЛКМ</b> — разрезать желе</span>
+                <span>•</span>
+                <span><b>ПРОБЕЛ</b> — спавн желе</span>
+                <span>•</span>
+                <span><b>ПКМ / СКМ</b> — вращать камеру</span>
+                <span>•</span>
+                <span><b>T</b> — слоумо</span>
+                <span>•</span>
+                <span><b>R</b> — очистить</span>
+                <span>•</span>
+                <span><b>F11</b> — во весь экран</span>
+            </div>
+        </div>
+        <div id="combo-toast"></div>
+    </div>
+    <script type="module" src="game.js"></script>
+</body>
+</html>
